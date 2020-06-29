@@ -1,4 +1,4 @@
-ï»¿#include "main.h"
+#include "poker_header.h"
 
 void setColor(int back, int text)
 {
@@ -10,14 +10,14 @@ void setColor(int back, int text)
 
 void init()
 {
-	system("mode con cols=176 lines=45 | title í…ì‚¬ìŠ¤ í™€ë¤ ");
+	system("mode con cols=176 lines=45 | title ÅØ»ç½º È¦´ı ");
 	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO ConsoleCursor;
 	ConsoleCursor.bVisible = 0;
 	ConsoleCursor.dwSize = 1;
 	SetConsoleCursorInfo(consoleHandle, &ConsoleCursor);
 	system("color F5");
-	//setColor(WHITE, GREEN); // ê²Œì„í™”ë©´ ë§Œë“¤ë•Œ ì‚¬ìš©..
+	//setColor(WHITE, GREEN); // °ÔÀÓÈ­¸é ¸¸µé¶§ »ç¿ë..
 }
 
 void gotoxy(int x, int y)
@@ -31,20 +31,20 @@ void gotoxy(int x, int y)
 void introGame()
 {
 	setColor(WHITE, BLACK);
-	gotoxy(45, 5); cout << "       â–¡â–¡â–¡â–¡â–¡     â–¡â–¡â–¡â–¡â–¡     â–¡      â–¡         â–¡         â–¡â–¡â–¡â–¡â–¡";
-	gotoxy(45, 6); cout << "           â–¡         â–¡               â–¡  â–¡         â–¡  â–¡       â–¡        ";
-	gotoxy(45, 7); cout << "           â–¡         â–¡â–¡â–¡â–¡â–¡         â–¡         â–¡â–¡â–¡â–¡â–¡       â–¡â–¡â–¡  ";
-	gotoxy(45, 8); cout << "           â–¡         â–¡               â–¡  â–¡       â–¡      â–¡             â–¡";
-	gotoxy(45, 9); cout << "           â–¡         â–¡â–¡â–¡â–¡â–¡     â–¡      â–¡     â–¡      â–¡     â–¡â–¡â–¡â–¡â–¡";
+	gotoxy(45, 5); cout << "       ¡à¡à¡à¡à¡à     ¡à¡à¡à¡à¡à     ¡à      ¡à         ¡à         ¡à¡à¡à¡à¡à";
+	gotoxy(45, 6); cout << "           ¡à         ¡à               ¡à  ¡à         ¡à  ¡à       ¡à        ";
+	gotoxy(45, 7); cout << "           ¡à         ¡à¡à¡à¡à¡à         ¡à         ¡à¡à¡à¡à¡à       ¡à¡à¡à  ";
+	gotoxy(45, 8); cout << "           ¡à         ¡à               ¡à  ¡à       ¡à      ¡à             ¡à";
+	gotoxy(45, 9); cout << "           ¡à         ¡à¡à¡à¡à¡à     ¡à      ¡à     ¡à      ¡à     ¡à¡à¡à¡à¡à";
 	gotoxy(45, 10); cout << "																			 ";
-	gotoxy(45, 12); cout << " â–¡      â–¡     â–¡â–¡â–¡â–¡â–¡     â–¡             â–¡â–¡â–¡â–¡       â–¡â–¡â–¡â–¡â–¡     â–¡      â–¡";
-	gotoxy(45, 13); cout << " â–¡      â–¡     â–¡      â–¡     â–¡             â–¡     â–¡      â–¡             â–¡â–¡  â–¡â–¡";
-	gotoxy(45, 14); cout << " â–¡â–¡â–¡â–¡â–¡     â–¡      â–¡     â–¡             â–¡      â–¡     â–¡â–¡â–¡â–¡â–¡     â–¡  â–¡  â–¡";
-	gotoxy(45, 15); cout << " â–¡      â–¡     â–¡      â–¡     â–¡             â–¡     â–¡      â–¡             â–¡      â–¡";
-	gotoxy(45, 16); cout << " â–¡      â–¡     â–¡â–¡â–¡â–¡â–¡     â–¡â–¡â–¡â–¡â–¡     â–¡â–¡â–¡â–¡       â–¡â–¡â–¡â–¡â–¡     â–¡      â–¡";
-	gotoxy(82, 25); cout << "[ê²Œì„ì‹œì‘]";
-	gotoxy(82, 26); cout << "[ê²Œì„ê·œì¹™]";
-	gotoxy(82, 27); cout << "[ê²Œì„ì¢…ë£Œ]";
+	gotoxy(45, 12); cout << " ¡à      ¡à     ¡à¡à¡à¡à¡à     ¡à             ¡à¡à¡à¡à       ¡à¡à¡à¡à¡à     ¡à      ¡à";
+	gotoxy(45, 13); cout << " ¡à      ¡à     ¡à      ¡à     ¡à             ¡à     ¡à      ¡à             ¡à¡à  ¡à¡à";
+	gotoxy(45, 14); cout << " ¡à¡à¡à¡à¡à     ¡à      ¡à     ¡à             ¡à      ¡à     ¡à¡à¡à¡à¡à     ¡à  ¡à  ¡à";
+	gotoxy(45, 15); cout << " ¡à      ¡à     ¡à      ¡à     ¡à             ¡à     ¡à      ¡à             ¡à      ¡à";
+	gotoxy(45, 16); cout << " ¡à      ¡à     ¡à¡à¡à¡à¡à     ¡à¡à¡à¡à¡à     ¡à¡à¡à¡à       ¡à¡à¡à¡à¡à     ¡à      ¡à";
+	gotoxy(82, 25); cout << "[°ÔÀÓ½ÃÀÛ]";
+	gotoxy(82, 26); cout << "[°ÔÀÓ±ÔÄ¢]";
+	gotoxy(82, 27); cout << "[°ÔÀÓÁ¾·á]";
 }
 
 int keyControl()
@@ -77,9 +77,9 @@ int menuChoice()
 {
 	int x = 82;
 	int y = 25;
-	gotoxy(x - 2, y); cout << "> [ê²Œì„ì‹œì‘]";
-	gotoxy(x, y + 1); cout << "[ê²Œì„ê·œì¹™]";
-	gotoxy(x, y + 2); cout << "[ê²Œì„ì¢…ë£Œ]";
+	gotoxy(x - 2, y); cout << "> [°ÔÀÓ½ÃÀÛ]";
+	gotoxy(x, y + 1); cout << "[°ÔÀÓ±ÔÄ¢]";
+	gotoxy(x, y + 2); cout << "[°ÔÀÓÁ¾·á]";
 	while (1) {
 		int n = keyControl();
 		switch (n) {
@@ -112,7 +112,7 @@ int menuChoice()
 }
 
 void gameImage()
-{	
+{
 	int x = 65;
 	int y = 40;
 	system("color 02");
@@ -121,28 +121,28 @@ void gameImage()
 	for (int i = 1; i < 35; i++)
 	{
 		gotoxy(30, i);
-		cout << "â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’";
+		cout << "¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ";
 	}
 	setColor(WHITE, WHITE);
 	for (int i = 0; i < 35; i++)
 	{
-		gotoxy(29, i); cout << "â–’";
-		gotoxy(145, i); cout << "â–’";
+		gotoxy(29, i); cout << "¢Æ";
+		gotoxy(145, i); cout << "¢Æ";
 	}
-	gotoxy(29, 0);	cout << "â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’";
-	gotoxy(29, 35); cout << "â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’";
-	
-	player(10, 3);  cout << "ë„ì˜";
-	player(10, 18); cout << "ì§„í˜";
-	player(150, 3); cout << "ì •í›ˆ";
-	player(150, 18);cout << "ê°•ë¯¼";
-	gotoxy(85, 36); cout << "ì°¸ê°€ì";
+	gotoxy(29, 0);	cout << "¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ";
+	gotoxy(29, 35); cout << "¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ";
 
-	gotoxy(x, y);  cout << "ì½œ";
-	gotoxy(x + 10, y); cout << "ë‹¤ì´";
-	gotoxy(x + 20, y); cout << "ë”ë¸”";
-	gotoxy(x + 30, y); cout << "í•˜í”„";
-	gotoxy(x + 40, y); cout << "ì˜¬ì¸";
+	player(10, 3);  cout << "µµ¿µ";
+	player(10, 18); cout << "ÁøÇõ";
+	player(150, 3); cout << "Á¤ÈÆ";
+	player(150, 18); cout << "°­¹Î";
+	gotoxy(85, 36); cout << "Âü°¡ÀÚ";
+
+	gotoxy(x, y);  cout << "Äİ";
+	gotoxy(x + 10, y); cout << "´ÙÀÌ";
+	gotoxy(x + 20, y); cout << "´õºí";
+	gotoxy(x + 30, y); cout << "ÇÏÇÁ";
+	gotoxy(x + 40, y); cout << "¿ÃÀÎ";
 
 	/*while (1)
 	{
@@ -157,11 +157,11 @@ void gameImage()
 void gameRule()
 {
 	system("cls");
-	gotoxy(15, 10); cout << "í…ì‚¬ìŠ¤ í™€ë¤ ê°„ë‹¨ ìš”ì•½"<< endl;
-	gotoxy(15, 10); cout << "1. í”Œë ˆì´ì–´ë“¤ì€ ê°œì¸ë³„ ì†íŒ¨ 2ì¥ì˜ ì¹´ë“œë¥¼ ë°›ìŠµë‹ˆë‹¤." << endl;
-	gotoxy(15, 11); cout << "2. ëª¨ë“  í”Œë ˆì´ì–´ë“¤ì´ ê³µìœ í•˜ëŠ” ì»¤ë®¤ë‹ˆí‹° ì¹´ë“œ 5ì¥ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤." << endl;
-	gotoxy(15, 12); cout << "3. ì»¤ë®¤ë‹ˆí‹° ì¹´ë“œ 5ì¥ê³¼ ê°œì¸ë³„ ì†íŒ¨ 2ì¥ì˜ ì¹´ë“œì˜ ì¡°í•©ì´ ê°€ì¥ ë†’ì€ í”Œë ˆì´ì–´ê°€ ìŠ¹ë¦¬í•©ë‹ˆë‹¤." << endl;
-	gotoxy(15, 13); cout << "ì¹´ë“œ ì¡°í•©ì— ëŒ€í•œ ìì„¸í•œ ì„¤ëª…ì€ ì•„ë˜ í™ˆí˜ì´ì§€ë¥¼ ì°¸ê³ í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤." << endl;
+	gotoxy(15, 10); cout << "ÅØ»ç½º È¦´ı °£´Ü ¿ä¾à" << endl;
+	gotoxy(15, 10); cout << "1. ÇÃ·¹ÀÌ¾îµéÀº °³ÀÎº° ¼ÕÆĞ 2ÀåÀÇ Ä«µå¸¦ ¹Ş½À´Ï´Ù." << endl;
+	gotoxy(15, 11); cout << "2. ¸ğµç ÇÃ·¹ÀÌ¾îµéÀÌ °øÀ¯ÇÏ´Â Ä¿¹Â´ÏÆ¼ Ä«µå 5ÀåÀÌ ÁÖ¾îÁı´Ï´Ù." << endl;
+	gotoxy(15, 12); cout << "3. Ä¿¹Â´ÏÆ¼ Ä«µå 5Àå°ú °³ÀÎº° ¼ÕÆĞ 2ÀåÀÇ Ä«µåÀÇ Á¶ÇÕÀÌ °¡Àå ³ôÀº ÇÃ·¹ÀÌ¾î°¡ ½Â¸®ÇÕ´Ï´Ù." << endl;
+	gotoxy(15, 13); cout << "Ä«µå Á¶ÇÕ¿¡ ´ëÇÑ ÀÚ¼¼ÇÑ ¼³¸íÀº ¾Æ·¡ È¨ÆäÀÌÁö¸¦ Âü°íÇÏ½Ã±â ¹Ù¶ø´Ï´Ù." << endl;
 	gotoxy(15, 14); cout << "https://crash-landing.github.io" << endl;
 	while (1)
 	{
@@ -176,120 +176,120 @@ void player(int x, int y)
 {
 	int coin = 50;
 	setColor(BLACK, WHITE);
-	gotoxy(x, y - 2); cout << "  ë‚¨ì€ ì¹©: " << coin << endl;
-	gotoxy(x, y);     cout << "â– â– â– â– â– â– â– â– \n";
-	gotoxy(x, y + 1); cout << "â– â–¡â–¡â– â– â–¡â–¡â– \n";
-	gotoxy(x, y + 2); cout << "â– â–¡â–¡â– â– â–¡â–¡â– \n";
-	gotoxy(x, y + 3); cout << "â– â– â– â–¡â–¡â– â– â– \n";
-	gotoxy(x, y + 4); cout << "â– â–¡â– â– â– â– â–¡â– \n";
-	gotoxy(x, y + 5); cout << "â– â–¡â–¡â–¡â–¡â–¡â–¡â– \n\n";
-	gotoxy(x, y + 6); cout << "â– â– â– â– â– â– â– â– \n\n";
-	gotoxy(x, y + 8); cout << "  ì°¸ê°€ì: ";
-}					
+	gotoxy(x, y - 2); cout << "  ³²Àº Ä¨: " << coin << endl;
+	gotoxy(x, y);     cout << "¡á¡á¡á¡á¡á¡á¡á¡á\n";
+	gotoxy(x, y + 1); cout << "¡á¡à¡à¡á¡á¡à¡à¡á\n";
+	gotoxy(x, y + 2); cout << "¡á¡à¡à¡á¡á¡à¡à¡á\n";
+	gotoxy(x, y + 3); cout << "¡á¡á¡á¡à¡à¡á¡á¡á\n";
+	gotoxy(x, y + 4); cout << "¡á¡à¡á¡á¡á¡á¡à¡á\n";
+	gotoxy(x, y + 5); cout << "¡á¡à¡à¡à¡à¡à¡à¡á\n\n";
+	gotoxy(x, y + 6); cout << "¡á¡á¡á¡á¡á¡á¡á¡á\n\n";
+	gotoxy(x, y + 8); cout << "  Âü°¡ÀÚ: ";
+}
 
 int bettingMenuChoice()
 {
 	setColor(BLACK, WHITE);
 	int x = 65;
 	int y = 40;
-	gotoxy(x - 2, y);  cout << "> ì½œ";
-	gotoxy(x + 10, y); cout << "ë‹¤ì´";
-	gotoxy(x + 20, y); cout << "ë”ë¸”";
-	gotoxy(x + 30, y); cout << "í•˜í”„";
-	gotoxy(x + 40, y); cout << "ì˜¬ì¸";
+	gotoxy(x - 2, y);  cout << "> Äİ";
+	gotoxy(x + 10, y); cout << "´ÙÀÌ";
+	gotoxy(x + 20, y); cout << "´õºí";
+	gotoxy(x + 30, y); cout << "ÇÏÇÁ";
+	gotoxy(x + 40, y); cout << "¿ÃÀÎ";
 	while (1) {
 		int n = keyControl();
 		switch (n) {
-			case RIGHT: 
-			{
-				if (x < 105) 
-				{	
-					gotoxy(x - 2, y); cout << " ";
-					x = x + 10;
-					gotoxy(x - 2, y); cout << ">";
-				}
-				break;
-			}
-
-			case LEFT:
-			{
-				if (x > 65)
-				{
-					gotoxy(x - 2, y); cout << " ";
-					x = x - 10;
-					gotoxy(x - 2, y); cout << ">";
-				}
-				break;
-			}
-
-			case CHOICE:
+		case RIGHT:
+		{
+			if (x < 105)
 			{
 				gotoxy(x - 2, y); cout << " ";
-				return x - 50;
+				x = x + 10;
+				gotoxy(x - 2, y); cout << ">";
 			}
+			break;
+		}
+
+		case LEFT:
+		{
+			if (x > 65)
+			{
+				gotoxy(x - 2, y); cout << " ";
+				x = x - 10;
+				gotoxy(x - 2, y); cout << ">";
+			}
+			break;
+		}
+
+		case CHOICE:
+		{
+			gotoxy(x - 2, y); cout << " ";
+			return x - 50;
+		}
 		}
 	}
 
 }
-void bettingPrint(int x) //ë² íŒ… ë¬¸ì ì¶œë ¥ 
+void bettingPrint(int x) //º£ÆÃ ¹®ÀÚ Ãâ·Â 
 {
 	int y = 12;
 	switch (x / 10) {
-		case 0:  // ë¹ˆ í™”ë©´
-			setColor(GREEN, GREEN);
-			for (int i = y; i < y+5; i++)
-			{
-				gotoxy(45, i);
-				cout << "â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’";
-			}
-			break;
+	case 0:  // ºó È­¸é
+		setColor(GREEN, GREEN);
+		for (int i = y; i < y + 5; i++)
+		{
+			gotoxy(45, i);
+			cout << "¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ¢Æ";
+		}
+		break;
 
-		case 1: // ì½œ
-			gotoxy(45, y);   cout << "                â– â– â– â– â–          â–          â–            â–            â–            ";
-			gotoxy(45, y+1); cout << "                â–                â–   â–        â–            â–            â–            ";
-			gotoxy(45, y+2); cout << "                â–              â– â– â– â– â–      â–            â–            â–            ";
-			gotoxy(45, y+3); cout << "                â–              â–       â–      â–            â–                         ";
-			gotoxy(45, y+4); cout << "                â– â– â– â– â–      â–       â–      â– â– â– â–      â– â– â– â–      â–            ";
-			break;
+	case 1: // Äİ
+		gotoxy(45, y);   cout << "                ¡á¡á¡á¡á¡á         ¡á         ¡á           ¡á           ¡á           ";
+		gotoxy(45, y + 1); cout << "                ¡á               ¡á  ¡á       ¡á           ¡á           ¡á           ";
+		gotoxy(45, y + 2); cout << "                ¡á             ¡á¡á¡á¡á¡á     ¡á           ¡á           ¡á           ";
+		gotoxy(45, y + 3); cout << "                ¡á             ¡á      ¡á     ¡á           ¡á                        ";
+		gotoxy(45, y + 4); cout << "                ¡á¡á¡á¡á¡á     ¡á      ¡á     ¡á¡á¡á¡á     ¡á¡á¡á¡á     ¡á           ";
+		break;
 
-		case 2: // ë‹¤ì´
-			gotoxy(45, y);   cout << "                       â– â– â– â–          â– â– â–        â– â– â– â–      â–                    ";
-			gotoxy(45, y+1); cout << "                       â–      â–           â–          â–            â–                    ";
-			gotoxy(45, y+2); cout << "                       â–       â–          â–          â– â– â– â–      â–                    ";
-			gotoxy(45, y+3); cout << "                       â–      â–           â–          â–                                 ";
-			gotoxy(45, y+4); cout << "                       â– â– â– â–          â– â– â–        â– â– â– â–      â–                    ";
-			break;
+	case 2: // ´ÙÀÌ
+		gotoxy(45, y);   cout << "                       ¡á¡á¡á¡á         ¡á¡á¡á       ¡á¡á¡á¡á     ¡á                   ";
+		gotoxy(45, y + 1); cout << "                       ¡á     ¡á          ¡á         ¡á           ¡á                   ";
+		gotoxy(45, y + 2); cout << "                       ¡á      ¡á         ¡á         ¡á¡á¡á¡á     ¡á                   ";
+		gotoxy(45, y + 3); cout << "                       ¡á     ¡á          ¡á         ¡á                                ";
+		gotoxy(45, y + 4); cout << "                       ¡á¡á¡á¡á         ¡á¡á¡á       ¡á¡á¡á¡á     ¡á                   ";
+		break;
 
-		case 3: // ë”ë¸”
-			gotoxy(45, y);   cout << " â– â– â– â–         â– â– â– â–       â–       â–      â– â– â– â–        â–            â– â– â– â–      â–    ";
-			gotoxy(45, y+1); cout << " â–      â–       â–       â–      â–       â–      â–      â–       â–            â–            â–    ";
-			gotoxy(45, y+2); cout << " â–       â–      â–       â–      â–       â–      â– â– â– â–        â–            â– â– â– â–      â–    ";
-			gotoxy(45, y+3); cout << " â–      â–       â–       â–      â–       â–      â–      â–       â–            â–                 ";
-			gotoxy(45, y+4); cout << " â– â– â– â–         â– â– â– â–        â– â– â– â–       â– â– â– â–        â– â– â– â–      â– â– â– â–      â–    ";
-			break;
+	case 3: // ´õºí
+		gotoxy(45, y);   cout << " ¡á¡á¡á¡á        ¡á¡á¡á¡á      ¡á      ¡á     ¡á¡á¡á¡á       ¡á           ¡á¡á¡á¡á     ¡á   ";
+		gotoxy(45, y + 1); cout << " ¡á     ¡á      ¡á      ¡á     ¡á      ¡á     ¡á     ¡á      ¡á           ¡á           ¡á   ";
+		gotoxy(45, y + 2); cout << " ¡á      ¡á     ¡á      ¡á     ¡á      ¡á     ¡á¡á¡á¡á       ¡á           ¡á¡á¡á¡á     ¡á   ";
+		gotoxy(45, y + 3); cout << " ¡á     ¡á      ¡á      ¡á     ¡á      ¡á     ¡á     ¡á      ¡á           ¡á                ";
+		gotoxy(45, y + 4); cout << " ¡á¡á¡á¡á        ¡á¡á¡á¡á       ¡á¡á¡á¡á      ¡á¡á¡á¡á       ¡á¡á¡á¡á     ¡á¡á¡á¡á     ¡á   ";
+		break;
 
-		case 4: // í•˜í”„
-			gotoxy(45, y);   cout << "                â–       â–          â–          â–            â– â– â– â–      â–              ";
-			gotoxy(45, y+1); cout << "                â–       â–        â–   â–        â–            â–            â–              ";
-			gotoxy(45, y+2); cout << "                â– â– â– â– â–      â– â– â– â– â–      â–            â– â– â– â–      â–              ";
-			gotoxy(45, y+3); cout << "                â–       â–      â–       â–      â–            â–                           ";
-			gotoxy(45, y+4); cout << "                â–       â–      â–       â–      â– â– â– â–      â–            â–              ";
-			break;
+	case 4: // ÇÏÇÁ
+		gotoxy(45, y);   cout << "                ¡á      ¡á         ¡á         ¡á           ¡á¡á¡á¡á     ¡á             ";
+		gotoxy(45, y + 1); cout << "                ¡á      ¡á       ¡á  ¡á       ¡á           ¡á           ¡á             ";
+		gotoxy(45, y + 2); cout << "                ¡á¡á¡á¡á¡á     ¡á¡á¡á¡á¡á     ¡á           ¡á¡á¡á¡á     ¡á             ";
+		gotoxy(45, y + 3); cout << "                ¡á      ¡á     ¡á      ¡á     ¡á           ¡á                          ";
+		gotoxy(45, y + 4); cout << "                ¡á      ¡á     ¡á      ¡á     ¡á¡á¡á¡á     ¡á           ¡á             ";
+		break;
 
-		case 5:  // ì˜¬ì¸
-			gotoxy(45, y);   cout << "         â–          â–            â–                 â– â– â–        â–       â–      â–       ";
-			gotoxy(45, y+1); cout << "       â–   â–        â–            â–                   â–          â– â–     â–      â–       ";
-			gotoxy(45, y+2); cout << "     â– â– â– â– â–      â–            â–                   â–          â–   â–   â–      â–       ";
-			gotoxy(45, y+3); cout << "     â–       â–      â–            â–                   â–          â–     â– â–              ";
-			gotoxy(45, y+4); cout << "     â–       â–      â– â– â– â–      â– â– â– â–           â– â– â–        â–       â–      â–       ";
-			break;
+	case 5:  // ¿ÃÀÎ
+		gotoxy(45, y);   cout << "         ¡á         ¡á           ¡á                ¡á¡á¡á       ¡á      ¡á     ¡á      ";
+		gotoxy(45, y + 1); cout << "       ¡á  ¡á       ¡á           ¡á                  ¡á         ¡á¡á    ¡á     ¡á      ";
+		gotoxy(45, y + 2); cout << "     ¡á¡á¡á¡á¡á     ¡á           ¡á                  ¡á         ¡á  ¡á  ¡á     ¡á      ";
+		gotoxy(45, y + 3); cout << "     ¡á      ¡á     ¡á           ¡á                  ¡á         ¡á    ¡á¡á             ";
+		gotoxy(45, y + 4); cout << "     ¡á      ¡á     ¡á¡á¡á¡á     ¡á¡á¡á¡á          ¡á¡á¡á       ¡á      ¡á     ¡á      ";
+		break;
 	}
 }
 
-void bettingNumber() 
+void bettingNumber()
 {
 	while (1) {
-		int x = bettingMenuChoice(); // ë² íŒ…ë©”ë‰´ ì„ íƒ í•¨ìˆ˜
+		int x = bettingMenuChoice(); // º£ÆÃ¸Ş´º ¼±ÅÃ ÇÔ¼ö
 		setColor(GREEN, WHITE);
 		bettingPrint(x);
 		Sleep(1000);
@@ -301,20 +301,20 @@ void victoryPrint()
 {
 	gotoxy(80, 17); cout << "------------------------";
 	gotoxy(80, 18); cout << "|                       |";
-	gotoxy(80, 19); cout << "|      ìŠ¹ë¦¬!!!!!!!      |";
+	gotoxy(80, 19); cout << "|      ½Â¸®!!!!!!!      |";
 	gotoxy(80, 20); cout << "|                       |";
 	gotoxy(80, 21); cout << "------------------------";
-	introGame(); // ì‹œì‘í™”ë©´ì˜ í‘œì‹œë¶€ë¶„ í•¨ìˆ˜
+	introGame(); // ½ÃÀÛÈ­¸éÀÇ Ç¥½ÃºÎºĞ ÇÔ¼ö
 }
 
 void defeatPrint()
 {
 	gotoxy(80, 17); cout << "------------------------";
 	gotoxy(80, 18); cout << "|                       |";
-	gotoxy(80, 19); cout << "|      íŒ¨ë°°!!!!!!!      |";
+	gotoxy(80, 19); cout << "|      ÆĞ¹è!!!!!!!      |";
 	gotoxy(80, 20); cout << "|                       |";
 	gotoxy(80, 21); cout << "------------------------";
-	introGame(); // ì‹œì‘í™”ë©´ì˜ í‘œì‹œë¶€ë¶„ í•¨ìˆ˜
+	introGame(); // ½ÃÀÛÈ­¸éÀÇ Ç¥½ÃºÎºĞ ÇÔ¼ö
 }
 
 void picture(int* num1_rand, int* shape_rand)
@@ -323,55 +323,55 @@ void picture(int* num1_rand, int* shape_rand)
 	int shape[5] = { 0,1,2,3,4 }; //null, spade, diamond, heart, cluber
 	int number[14] = { 0,2,3,4,5,6,7,8,9,10,11,12,13,1 }; //null, 2~10, jack, queen, king, ace
 	int x = 100, y = 14;
-	int i, j, k, v = 1, hide = 0;		//hide 0 ìˆ¨ê¹€, 1 í‘œì‹œ
+	int i, j, k, v = 1, hide = 0;		//hide 0 ¼û±è, 1 Ç¥½Ã
 	int get = 4;
 	int num1 = 0, num2 = 0;
 	for (k = 0; k < 2; k++)
 	{
-		if (k == 0) // í˜„ì¬ ë’·ë©´ì¸ ìƒíƒœ
+		if (k == 0) // ÇöÀç µŞ¸éÀÎ »óÅÂ
 		{
-			for (i = 0;i < 4;i++) // ì¹´ë“œê°€ ë‚˜ì—´ë˜ëŠ” ê·¸ë˜í”½
+			for (i = 0; i < 4; i++) // Ä«µå°¡ ³ª¿­µÇ´Â ±×·¡ÇÈ
 			{
 				num1 = 0;
 				for (j = 0; j < 15; j++)
 				{
 					Sleep(10);
-					gotoxy(x - num1, 14); cout << "â”â”â”â”â”â”â”â”“";
-					gotoxy(x - num1, 15); cout << "â”ƒ?     â”ƒ";
-					gotoxy(x - num1, 16); cout << "â”ƒ      â”ƒ";
-					gotoxy(x - num1, 17); cout << "â”ƒ   ?  â”ƒ";
-					gotoxy(x - num1, 18); cout << "â”ƒ      â”ƒ";
-					gotoxy(x - num1, 19); cout << "â”ƒ     ?â”ƒ";
-					gotoxy(x - num1, 20); cout << "â”—â”â”â”â”â”â”â”›";
+					gotoxy(x - num1, 14); cout << "¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¯";
+					gotoxy(x - num1, 15); cout << "¦­?     ¦­";
+					gotoxy(x - num1, 16); cout << "¦­      ¦­";
+					gotoxy(x - num1, 17); cout << "¦­   ?  ¦­";
+					gotoxy(x - num1, 18); cout << "¦­      ¦­";
+					gotoxy(x - num1, 19); cout << "¦­     ?¦­";
+					gotoxy(x - num1, 20); cout << "¦±¦¬¦¬¦¬¦¬¦¬¦¬¦°";
 					num1 += 1;
 				}
 				x += 2;
 			}
 			num1 = 0;
-			for (i = 0;i < 15;i++) // ì¹´ë“œê°€ ë°°ë¶„ë˜ëŠ” ê·¸ë˜í”½
+			for (i = 0; i < 15; i++) // Ä«µå°¡ ¹èºĞµÇ´Â ±×·¡ÇÈ
 			{
 				num1 = 1;
 				if (i % 2 == 1)
 				{
 					num1 *= -1;
 				}
-				for (j = 0;j < 7;j++)
+				for (j = 0; j < 7; j++)
 				{
 					Sleep(20);
 					if (i % 2 == 0)
 					{
 						gotoxy(80 - num2, 21 - num1); cout << "          ";
 					}
-					gotoxy(80 - num2, 14 - num1); cout <<"â”â”â”â”â”â”â”â”“";
-					gotoxy(80 - num2, 15 - num1); cout <<"â”ƒ?     â”ƒ";
-					gotoxy(80 - num2, 16 - num1); cout <<"â”ƒ      â”ƒ";
-					gotoxy(80 - num2, 17 - num1); cout <<"â”ƒ   ?  â”ƒ";
-					gotoxy(80 - num2, 18 - num1); cout <<"â”ƒ      â”ƒ";
-					gotoxy(80 - num2, 19 - num1); cout <<"â”ƒ     ?â”ƒ";
-					gotoxy(80 - num2, 20 - num1); cout <<"â”—â”â”â”â”â”â”â”›";
+					gotoxy(80 - num2, 14 - num1); cout << "¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¯";
+					gotoxy(80 - num2, 15 - num1); cout << "¦­?     ¦­";
+					gotoxy(80 - num2, 16 - num1); cout << "¦­      ¦­";
+					gotoxy(80 - num2, 17 - num1); cout << "¦­   ?  ¦­";
+					gotoxy(80 - num2, 18 - num1); cout << "¦­      ¦­";
+					gotoxy(80 - num2, 19 - num1); cout << "¦­     ?¦­";
+					gotoxy(80 - num2, 20 - num1); cout << "¦±¦¬¦¬¦¬¦¬¦¬¦¬¦°";
 					if (i % 2 == 1)
 					{
-						gotoxy(80 - num2, 13 - num1); cout <<"          ";
+						gotoxy(80 - num2, 13 - num1); cout << "          ";
 					}
 					if (i % 2 == 0)
 						num1 += 1;
@@ -383,7 +383,7 @@ void picture(int* num1_rand, int* shape_rand)
 			system("cls");
 			gameImage();
 		}
-		else // ì•ë©´ì¸ ìƒíƒœ
+		else // ¾Õ¸éÀÎ »óÅÂ
 		{
 			setColor(GREEN, WHITE);
 			playerCard(35, 3);
@@ -393,7 +393,7 @@ void picture(int* num1_rand, int* shape_rand)
 			playerCard(80, 25);
 			num1 = 0;
 			j = 1;
-			for (i = 0;i < 10;i++)
+			for (i = 0; i < 10; i++)
 			{
 				if (i % 2 == 0)
 				{
@@ -403,52 +403,52 @@ void picture(int* num1_rand, int* shape_rand)
 						hide = 1;
 						_getch();
 					}
-					gotoxy(60 + num1, 3); cout <<"â”â”â”â”â”â”â”â”“";
-					gotoxy(60 + num1, 4); cout <<"â”ƒ      â”ƒ";
-					gotoxy(60 + num1, 5); cout <<"â”ƒ      â”ƒ";
-					gotoxy(60 + num1, 6); cout <<"â”ƒ      â”ƒ";
-					gotoxy(60 + num1, 7); cout <<"â”ƒ      â”ƒ";
-					gotoxy(60 + num1, 8); cout <<"â”ƒ      â”ƒ";
-					gotoxy(60 + num1, 9); cout <<"â”—â”â”â”â”â”â”â”›";
+					gotoxy(60 + num1, 3); cout << "¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¯";
+					gotoxy(60 + num1, 4); cout << "¦­      ¦­";
+					gotoxy(60 + num1, 5); cout << "¦­      ¦­";
+					gotoxy(60 + num1, 6); cout << "¦­      ¦­";
+					gotoxy(60 + num1, 7); cout << "¦­      ¦­";
+					gotoxy(60 + num1, 8); cout << "¦­      ¦­";
+					gotoxy(60 + num1, 9); cout << "¦±¦¬¦¬¦¬¦¬¦¬¦¬¦°";
 					//					if(hide != 1){
 					if (shape[shape_rand[j]] == 1) {
 						setColor(GREEN, BLACK);
-						gotoxy(62 + num1, 4);cout <<"â™ ";
-						gotoxy(66 + num1, 8);cout <<"â™ ";
+						gotoxy(62 + num1, 4); cout << "¢¼";
+						gotoxy(66 + num1, 8); cout << "¢¼";
 					}
 					else if (shape[shape_rand[j]] == 2) {
 						setColor(GREEN, RED);
-						gotoxy(62 + num1, 4);cout <<"â—†";
-						gotoxy(66 + num1, 8);cout <<"â—†";
+						gotoxy(62 + num1, 4); cout << "¡ß";
+						gotoxy(66 + num1, 8); cout << "¡ß";
 					}
 					else if (shape[shape_rand[j]] == 3) {
 						setColor(GREEN, RED);
-						gotoxy(62 + num1, 4);cout <<"â™¥";
-						gotoxy(66 + num1, 8);cout <<"â™¥";
+						gotoxy(62 + num1, 4); cout << "¢¾";
+						gotoxy(66 + num1, 8); cout << "¢¾";
 					}
 					else if (shape[shape_rand[j]] == 4) {
 						setColor(GREEN, BLACK);
-						gotoxy(62 + num1, 4);cout <<"â™£";
-						gotoxy(66 + num1, 8);cout <<"â™£";
+						gotoxy(62 + num1, 4); cout << "¢À";
+						gotoxy(66 + num1, 8); cout << "¢À";
 					}
 					if (number[num1_rand[j]] == 13) {
-						gotoxy(65 + num1, 6);cout <<"A";
+						gotoxy(65 + num1, 6); cout << "A";
 					}
 					else if (number[num1_rand[j]] == 10) {
-						gotoxy(65 + num1, 6);cout <<"J";
+						gotoxy(65 + num1, 6); cout << "J";
 					}
 					else if (number[num1_rand[j]] == 11) {
-						gotoxy(65 + num1, 6);cout <<"Q";
+						gotoxy(65 + num1, 6); cout << "Q";
 					}
 					else if (number[num1_rand[j]] == 12) {
-						gotoxy(65 + num1, 6);cout <<"K";
+						gotoxy(65 + num1, 6); cout << "K";
 					}
 					else if (number[num1_rand[j]] == num1_rand[j] + 1) {
-						gotoxy(65 + num1, 6);cout << num1_rand[j];
+						gotoxy(65 + num1, 6); cout << num1_rand[j];
 					}
 					//					}
 					num1 += 12;
-					j++;			//ë°°ì—´ì„ 1ì¹¸ì”© ì¦ê°€ ì‹œí‚¨ë‹¤.
+					j++;			//¹è¿­À» 1Ä­¾¿ Áõ°¡ ½ÃÅ²´Ù.
 				}
 			}
 		}
@@ -457,45 +457,45 @@ void picture(int* num1_rand, int* shape_rand)
 
 void playerCard(int x, int y)
 {
-	gotoxy(x, y);   cout << "â”â”â”â”â”â”â”â”“â”â”â”â”â”â”â”â”“";
-	gotoxy(x, y+1); cout << "â”ƒ      â”ƒâ”ƒ      â”ƒ";
-	gotoxy(x, y+2); cout << "â”ƒ      â”ƒâ”ƒ      â”ƒ";
-	gotoxy(x, y+3); cout << "â”ƒ      â”ƒâ”ƒ      â”ƒ";
-	gotoxy(x, y+4); cout << "â”ƒ      â”ƒâ”ƒ      â”ƒ";
-	gotoxy(x, y+5); cout << "â”ƒ      â”ƒâ”ƒ      â”ƒ";
-	gotoxy(x, y+6); cout << "â”—â”â”â”â”â”â”â”›â”—â”â”â”â”â”â”â”›";
+	gotoxy(x, y);   cout << "¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¯¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¯";
+	gotoxy(x, y + 1); cout << "¦­      ¦­¦­      ¦­";
+	gotoxy(x, y + 2); cout << "¦­      ¦­¦­      ¦­";
+	gotoxy(x, y + 3); cout << "¦­      ¦­¦­      ¦­";
+	gotoxy(x, y + 4); cout << "¦­      ¦­¦­      ¦­";
+	gotoxy(x, y + 5); cout << "¦­      ¦­¦­      ¦­";
+	gotoxy(x, y + 6); cout << "¦±¦¬¦¬¦¬¦¬¦¬¦¬¦°¦±¦¬¦¬¦¬¦¬¦¬¦¬¦°";
 }
 
 void printOrder(int result, int i) //
 {
 	switch (result)
 	{
-		case 1:
-			cout <<"í•˜ì´ì¹´ë“œ\n";
-			break;
-		case 2:
-			cout <<"ì›í˜ì–´\n";
-			break;
-		case 3:
-			cout <<"íˆ¬í˜ì–´\n";
-			break;
-		case 4:
-			cout <<"íŠ¸ë¦¬í”Œ\n";
-			break;
-		case 5:
-			cout <<"ìŠ¤íŠ¸ë ˆì´íŠ¸\n";
-			break;
-		case 6:
-			cout <<"í”ŒëŸ¬ì‰¬\n";
-			break;
-		case 7:
-			cout <<"í’€í•˜ìš°ìŠ¤\n";
-			break;
-		case 8:
-			cout <<"í¬ì¹´ë“œ\n";
-			break;
-		case 9:
-			cout <<"ìŠ¤íŠ¸ë ˆì´íŠ¸ í”ŒëŸ¬ì‹œ\n";
-			break;
+	case 1:
+		cout << "ÇÏÀÌÄ«µå\n";
+		break;
+	case 2:
+		cout << "¿øÆä¾î\n";
+		break;
+	case 3:
+		cout << "ÅõÆä¾î\n";
+		break;
+	case 4:
+		cout << "Æ®¸®ÇÃ\n";
+		break;
+	case 5:
+		cout << "½ºÆ®·¹ÀÌÆ®\n";
+		break;
+	case 6:
+		cout << "ÇÃ·¯½¬\n";
+		break;
+	case 7:
+		cout << "Ç®ÇÏ¿ì½º\n";
+		break;
+	case 8:
+		cout << "Æ÷Ä«µå\n";
+		break;
+	case 9:
+		cout << "½ºÆ®·¹ÀÌÆ® ÇÃ·¯½Ã\n";
+		break;
 	}
 }
